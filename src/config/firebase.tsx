@@ -18,15 +18,16 @@ const firebaseConfig = {
   databaseURL: "https://scissor-56fb2-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
-const FirebaseContext = createContext( app.getApp());
+if(!app.getApps().length){
+  app.initializeApp(firebaseConfig);
+  InitializeAuth();
+}
+
+
+const FirebaseContext = createContext<app.FirebaseApp>(app.getApp());
 export { FirebaseContext }
 
-
  export default ({ children }:any) => {
-  if(!app.getApps().length){
-    app.initializeApp(firebaseConfig);
-    InitializeAuth();
-  }
     
   return (
     <FirebaseContext.Provider value={ app.getApp() }>
