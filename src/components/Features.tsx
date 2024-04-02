@@ -1,4 +1,4 @@
-import Linewhy from "../assets/linewhy.svg"
+import Linewhy from "../assets/Linewhy.svg"
 import urlShortening from "../assets/urlShortening.svg";
 import customURLs from "../assets/customURLs.svg";
 import qrCodes from "../assets/qrCodes.svg";
